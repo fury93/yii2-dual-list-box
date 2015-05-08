@@ -265,6 +265,10 @@
         $(options.parentElement + ' select').find('option').each(function() { $(this).show(); });
 
         countElements(options.parentElement, options);
+
+        var optionValues = [];
+        $('.selected option').each(function() { optionValues.push($(this).val()); });
+        $('#'+options['name']+'-'+(options['id'].toLowerCase())).val(JSON.stringify(optionValues));
     }
 
     /** Parses the stub select / list box that is first created. */
