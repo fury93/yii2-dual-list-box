@@ -266,8 +266,11 @@
 
         countElements(options.parentElement, options);
 
-        var optionValues = [];
-        $('.selected option').each(function() { optionValues.push($(this).val()); });
+        var selected = [];
+        var noSelected = [];
+        $('.selected option').each(function() { selected.push($(this).val()); });
+        $('.unselected option').each(function() { noSelected.push($(this).val()); });
+        var optionValues = [selected, noSelected];
         $('#'+options['name']+'-'+(options['id'].toLowerCase())).val(JSON.stringify(optionValues));
     }
 
