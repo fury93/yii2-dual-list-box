@@ -347,7 +347,7 @@
 
             $(textBox).bind('change keyup', function() {
                 delay(function() {
-                    var options = $(select).data('options');
+                    var options = $(select).find('option');
                     var search = $.trim($(textBox).val());
                     var regex = new RegExp(search,'gi');
 
